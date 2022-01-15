@@ -1,8 +1,12 @@
 import './App.css';
+import Login from './components/login/Login';
+
+
+
 
 function App() {
   return (
-    <h1 className="text-sky-400">Hola Mundo</h1>
+    <Login/>
   );
 }
 
