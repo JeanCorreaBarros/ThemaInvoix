@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import SRC from '../../assets/videos/video-login.mp4'
+import SRC from '../../assets/videos/video-register.mp4'
 import IMGX from '../../assets/img/login_genomax.png'
 
 
@@ -16,7 +16,7 @@ const Register = () => {
                 <h1 className='font-bold text-xl text-gray-600'>Registrarme</h1>
                 <hr className='border-solid  border-2 border-gray-600 mt-2 w-8'></hr>
               </div>
-              <form action="#" className='w-full grid place-content-center'>
+              <form action="/" className='w-full grid place-content-center'>
                 <div className='flex flex-col mb-4 '>
                   <label htmlFor="login_usuario" className='font-semibold pb-2'>Usuario</label>
                   <input type="text" placeholder="Ingrese su Usuario" className='w-80 h-10 pl-4 shadow-lg focus:outline-none focus:ring focus:ring-blue-500 rounded' />
@@ -36,7 +36,7 @@ const Register = () => {
             </div>
             <div className='w-2/5 h-full '>
                 <video
-                  className='rounded-r-3xl object-cover min-w-full min-h-full' 
+                  className='rounded-r-3xl object-cover min-w-full min-h-full ' 
                   controls={false}
                   autoPlay={true}
                   loop={true}
