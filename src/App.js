@@ -1,5 +1,9 @@
+import React,{ useState } from 'react';
 import './App.css';
-import Login from './components/login/Login';
+import LayoutAuth from './components/layout/LayoutAuth';
+import Home from './pages/Home';
+
+
 
 
 
@@ -7,9 +11,15 @@ import Login from './components/login/Login';
 
 
 function App() {
+  const [usuario,setUsuario] = useState(null)
+  console.log(usuario)
+  
   return (
     <>
-      <Login/>
+      {usuario
+        ? <Home/>
+        : <LayoutAuth setUsuario={setUsuario} />
+      }
     </>
   );
 }

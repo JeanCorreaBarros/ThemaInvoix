@@ -5,8 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import App from '../App';
-import Register from '../components/register/Register';
-import Dashboard from '../pages/Dashboard'
+import Home from '../pages/Home';
 import NotFound from '../pages/NotFound'
 
 
@@ -15,11 +14,9 @@ import NotFound from '../pages/NotFound'
 const Router = () => {
     return (
         <BrowserRouter>
-        <layout/>
             <Routes>
                 <Route path="/" element={<App/>}/>
-                <Route path="/register" element={<Register />}/>
-                <Route path="/dashboard" element={<Dashboard/>}/>
+                <Route path="/dashboard" element={<Home/>}/>
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>

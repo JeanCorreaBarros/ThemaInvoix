@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Dashboard = () => {
+const Home = () => {
     return (
         <div className="w-screen h-screen text-center font-bold">
-            Dashboard
+            Bienvenido Sesion Iniciada
         </div>
     )
 }
 
-export default Dashboard
+export default Home
