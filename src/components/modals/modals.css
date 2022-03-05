@@ -1,0 +1,42 @@
+.modal_perfil{
+  position: absolute;
+  top: 45px;
+  width: 254px;
+  height: 324px;
+  transform: translateX(-36%);
+  transition: 6s;
+  background-color: white;
+  color: rgb(24, 20, 20);
+  border-radius: 7px;
+  box-shadow: 0px 1px 11px 0px rgba(0,0,0,0.64);
+}
+
+.modal_mas{
+  position: absolute;
+  top: 58px;
+  width: 184px;
+  height: 240px;
+  transition: 6s;
+  background-color: white;
+  color: rgb(24, 20, 20);
+  border-radius: 7px;
+  padding-top: 30px;
+  box-shadow: 0px 1px 11px 0px rgba(0,0,0,0.64);
+}
+
+.modal_notificacion{
+  position: absolute;
+  top: 39px;
+  width: 600px;
+  height: 400px;
+  transform: translateX(-46%);
+  transition: 6s;
+  background-color: white;
+  color: rgb(24, 20, 20);
+  border-radius: 15px;
+  box-shadow: 0px 1px 11px 0px rgba(0,0,0,0.64);
+}
+
+
+
+ 

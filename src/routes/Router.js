@@ -5,20 +5,31 @@ import {
   Route
 } from "react-router-dom";
 import App from '../App';
-import Home from '../pages/Home';
 import NotFound from '../pages/NotFound'
-
-
-
+import {AuthProvider} from  '../context/authContext'
+import { ProtectedRoute } from '../components/proptectedRouter/ProtectedRoute'
+import Home from '../pages/Home';
+import Prueba from '../pages/Prueba';
 
 const Router = () => {
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App/>}/>
-                <Route path="/dashboard" element={<Home/>}/>
-                <Route path="*" element={<NotFound />} />
-            </Routes>
+            <AuthProvider>
+                <Routes>
+                    <Route path="/" element={
+                        <ProtectedRoute>
+                           <Home/>
+                        </ProtectedRoute>
+                    }/>
+                    <Route path="/prueba" element={
+                        <ProtectedRoute> 
+                            <Prueba/> 
+                        </ProtectedRoute>
+                    }/>
+                    <Route path="/auth" element={<App/>}/>
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </AuthProvider>
         </BrowserRouter>
     )
 }
