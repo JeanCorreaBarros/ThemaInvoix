@@ -5,17 +5,27 @@ import {useAuth} from '../../context/authContext';
 import perfil from '../../assets/img/perfil.png';
 
 const ModalPerfil = () => {
-
-  const user = JSON.parse(localStorage.getItem('user'));
+  const  user = JSON.parse(localStorage.getItem('user'));
   const {legout} = useAuth()
 
-  
+  function  myPhoto (){
+    const  user = JSON.parse(localStorage.getItem('user'));
+    let photo = {}
+    if(user){
+       photo = user.photoURL  
+    }else{
+      photo = perfil
+    }
+    return photo
+  }
 
+  const photoUser = myPhoto()
+  
   return (
     <div className="modal_perfil">
        <div className=" w-full h-28 flex flex-col justify-center items-center">
           <div>
-            <img src={user.photoURL ? user.photoURL : perfil} alt="" className="w-10 h-10 rounded-3xl" />
+            <img src={photoUser} alt="" className="w-10 h-10 rounded-3xl" />
           </div>
           <div className="text-sm pt-1">{user.displayName ? user.displayName : user.email}</div>
           <div className="text-xs pt-1">Administrador</div>

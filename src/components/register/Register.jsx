@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { Link,useNavigate} from 'react-router-dom'
 import IMGX from '../../assets/img/login_genomax.png'
 import {useAuth} from '../../context/authContext'
-import ButtonAuthGmail from '../buttons/ButtonAuthGmail'
+import { FaChevronLeft } from "react-icons/fa";
 
 
 
@@ -72,12 +72,9 @@ const Register = (props) => {
               <p className='text-sm text-center'>Al hacer clic en Registrarse, indicas que has leído y aceptas los <Link to="http://" className='text-blue-700'>Términos y condiciones</Link></p>
           </div>
           <button className="w-80 h-10 bg-blue-500 text-white hover:bg-blue-600 rounded mb-4">Registrarme</button>
-          <ButtonAuthGmail
-             title={"Register con Google"}
-          />
         </form>
         <div className="grid grid-cols-1 ">
-          <button onClick={props.estado} className="text-center">Iniciar Sesion</button>
+          <button onClick={props.estado} className="text-center flex items-center "><FaChevronLeft className="pr-2"/>Iniciar Sesion</button>
         </div>
       </div>
     )

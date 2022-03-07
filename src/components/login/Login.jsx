@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import IMGX from '../../assets/img/login_genomax.png'
 import {useAuth} from '../../context/authContext'
 import ButtonAuthGmail from '../buttons/ButtonAuthGmail'
+import { FaChevronRight} from "react-icons/fa";
 
 
 
@@ -64,9 +65,9 @@ const Login = (props) => {
           <ButtonAuthGmail
              title={"Login con Google"}
           />
-          <div className="grid grid-cols-2 divide-x">
-              <button onClick={props.estado}  className="text-center">Registrarme</button>
-              <button onClick={props.handleActive} className="text-center pl-1">Recuperar Contraseña</button>
+          <div className=" w-full flex justify-evenly divide-x">
+              <button onClick={props.estado}  className="w-6/12 text-center flex justify-center items-center pl-12"><FaChevronRight className="pr-2"/>Registrarme</button>
+              <button onClick={props.handleActive} className="w-6/12 text-center flex justify-start pl-5 ">Recuperar Contraseña</button>
           </div>
       </div>   
     )

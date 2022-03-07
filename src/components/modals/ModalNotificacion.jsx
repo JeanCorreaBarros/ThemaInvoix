@@ -6,12 +6,12 @@ import { OptionBtnNoti } from './optionsbtn/OptionBtnNoti';
 const ModalNotificacion = () => {
   return (
     <div className="modal_notificacion flex justify-center pt-5 ">
-      <div className="w-11/12 rounded-xl h-20 bg-gray-300">
-        <div className=" w-full h-full flex flex-col  justify-center items-center ">
+      <div className="w-11/12 rounded-xl h-20 bg-gray-300 bg-gradient-to-r from-cyan-500 to-blue-500">
+        <div className=" w-full h-full flex flex-col  justify-center items-center  ">
           <h3 className="font-semibold text-lg">Notificaciones</h3>
           <span>Usted Tiene<span className="text-red-600"> 2 </span> Nuevos Mensajes </span>
         </div>
-        <div className=" w-full h-64 flex flex-col bg-gray-300 rounded-xl mt-1 pt-7 pb-5 justify-center items-center overflow-y-scroll overflow-hidden ">
+        <div className=" w-full h-64 flex flex-col bg-gray-300 rounded-xl mt-1 pt-7 pb-5 justify-center items-center overflow-y-scroll overflow-hidden bg-gradient-to-b from-cyan-300 to-blue-200 ">
           <OptionBtnNoti
             menssages={'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsc'}
             color={'bg-red-600'}
