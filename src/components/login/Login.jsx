@@ -66,7 +66,7 @@ const Login = (props) => {
              title={"Login con Google"}
           />
           <div className=" w-full flex justify-evenly divide-x">
-              <button onClick={props.estado}  className="w-6/12 text-center flex justify-center items-center pl-12"><FaChevronRight className="pr-2"/>Registrarme</button>
+              <button onClick={props.estado}  className="w-6/12 text-center flex justify-center items-center pl-40"><FaChevronRight className="pr-2"/>Registrarme</button>
               <button onClick={props.handleActive} className="w-6/12 text-center flex justify-start pl-5 ">Recuperar Contraseña</button>
           </div>
       </div>   
