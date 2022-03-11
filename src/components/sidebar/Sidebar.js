@@ -21,8 +21,8 @@ export const Sidebar = ({ sidebar,showSidebar,setSidebar}) => {
   return (
     <SidebarNav ref={domNode} sidebar={sidebar} className="w-64 bg-gray-50 absolute " >
 
-      <div className=" h-40 flex flex-col justify-center bg-indigo-50 item-center ">
-        <button  className="text-gray-600 ml-8">
+      <div className=" h-40 flex flex-col justify-center bg-gray-200 item-center ">
+        <button  className="text-lime-700 ml-8">
           <FaBars  onClick={showSidebar} />
         </button>
         <div className='flex justify-center items-center'>
@@ -49,7 +49,7 @@ export const Sidebar = ({ sidebar,showSidebar,setSidebar}) => {
 
       <div className="px-6 pt-4 pb-8">
         <ul>
-          <li className="relative text-gray-500 hover:text-white focus-within:text-white">
+          <li className="relative text-lime-700 hover:text-white focus-within:text-white">
             <div
               className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none"
             >
@@ -72,12 +72,12 @@ export const Sidebar = ({ sidebar,showSidebar,setSidebar}) => {
             </div>
             <Link
               to=""
-              className="inline-block w-full py-2 pl-8 pr-4 text-xs rounded hover:bg-blue-600 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:bg-gray-800">
+              className="inline-block w-full py-2 pl-8 pr-4 text-xs rounded hover:bg-lime-600 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:bg-gray-800">
                 Soporte
             </Link>
           </li>
           
-          <li className="relative text-gray-500 hover:text-white focus-within:text-white">
+          <li className="relative text-lime-700 hover:text-white focus-within:text-white">
             <div
               className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none"
             >
@@ -114,7 +114,7 @@ export const Sidebar = ({ sidebar,showSidebar,setSidebar}) => {
             </div>
             <Link
               to=""
-              className="inline-block w-full py-2 pl-8 pr-4 text-xs rounded hover:bg-blue-600 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:bg-gray-800">
+              className="inline-block w-full py-2 pl-8 pr-4 text-xs rounded hover:bg-lime-600 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:bg-gray-800">
                 Apps
             </Link>
           </li>

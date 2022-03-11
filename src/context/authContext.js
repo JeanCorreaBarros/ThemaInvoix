@@ -26,7 +26,6 @@ export function AuthProvider({children}) {
    const navigate = useNavigate()
 
    const login =  (email, password) =>  signInWithEmailAndPassword(auth, email, password);
-
    const signup =  (email, password) => createUserWithEmailAndPassword(auth, email, password);
 
    const authGmail = () => {
@@ -53,13 +52,20 @@ export function AuthProvider({children}) {
        signOut(auth)
        window.location.reload();
    };
+
+  
+   const handlepop = ()=> {
+      navigate('/') 
+   }
+   
    
    useEffect(() =>{
       onAuthStateChanged(auth, (user) => {
          window.localStorage.setItem('user', JSON.stringify(user))
+         console.log(user)
       });  
    },[])
             
 
-   return<authContext.Provider value={{login,signup,legout,authGmail}}>{children}</authContext.Provider>;
+   return<authContext.Provider value={{login,signup,legout,authGmail,handlepop}}>{children}</authContext.Provider>;
 }

@@ -10,22 +10,21 @@ import {AuthProvider} from  '../context/authContext'
 import { ProtectedRoute } from '../components/proptectedRouter/ProtectedRoute'
 import Home from '../pages/Home';
 import Prueba from '../pages/Prueba';
+import Wizard from '../components/wizard/Wizard';
+import ProtectLayout from '../components/otros/ProtectLayout';
+
+
+
+
 
 const Router = () => {
     return (
         <BrowserRouter>
             <AuthProvider>
                 <Routes>
-                    <Route path="/" element={
-                        <ProtectedRoute>
-                           <Home/>
-                        </ProtectedRoute>
-                    }/>
-                    <Route path="/prueba" element={
-                        <ProtectedRoute> 
-                            <Prueba/> 
-                        </ProtectedRoute>
-                    }/>
+                    <Route path="/" element={<ProtectLayout><Home/></ProtectLayout>}/>
+                    <Route path="/prueba" element={<ProtectLayout><Prueba/></ProtectLayout>}/>
+                    <Route path="/wizardReneweb" element={<ProtectedRoute><Wizard/></ProtectedRoute>}/>
                     <Route path="/auth" element={<App/>}/>
                     <Route path="*" element={<NotFound />} />
                 </Routes>

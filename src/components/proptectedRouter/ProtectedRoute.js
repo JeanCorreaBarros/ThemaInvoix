@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navigate} from 'react-router-dom';
-import LayoutDashboard from '../layout/LayoutDashboard';
+
 
 export function ProtectedRoute({children}) {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -8,7 +8,6 @@ export function ProtectedRoute({children}) {
   
     return(
       <>
-        <LayoutDashboard/>
         {children}
       </>
     ) 

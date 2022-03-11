@@ -14,7 +14,7 @@ import perfil from '../../assets/img/perfil.png';
 
 
 const Nav = styled.span`
-  background: #2d78b1;
+  background: #66a31c;
   height: 55px;
   width:100%;
   position:fixed;
@@ -22,7 +22,7 @@ const Nav = styled.span`
   vertical-align: top;
   align-items: center;
   padding: 10px;
-  box-shadow: -1px 7px 24px -8px #2d78b175;
+  box-shadow: -1px 7px 24px -8px #497513;
   z-index: 999;
 `;
 
@@ -60,7 +60,7 @@ const Navbar = (props) => {
       <Nav className="flex justify-between">
 
         <div className="flex justify-around items-center gap-x-6 pl-5 ">
-          <button onClick={showSidebar} className="text-white  w-12 h-12 flex justify-center items-center rounded-3xl hover:bg-blue-600 ">
+          <button onClick={showSidebar} className="text-white  w-12 h-12 flex justify-center items-center rounded-3xl hover:bg-lime-700 ">
             <FaIcons.FaBars  />
           </button>
 
@@ -68,7 +68,7 @@ const Navbar = (props) => {
             <a href={'/'} className=''>GenomaX MD</a>
           </div>
 
-          <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-blue-600 ">
+          <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-lime-700 ">
             <NavItem icon={<BiPlusCircle className="opciones" />}>
               <ModalButtonMas/> 
             </NavItem>
@@ -77,13 +77,13 @@ const Navbar = (props) => {
 
         <div className="flex justify-center items-between gap-x-12 pr-5">
 
-          <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-blue-600">
+          <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-lime-700">
             <NavItem icon={<VscBellDot className="text-xl text-white "/> }>
               <ModalNotificacion /> 
             </NavItem>
           </div>
 
-          <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-blue-600">
+          <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-lime-700">
             <NavItem img={<img src={user.photoURL ? user.photoURL : perfil} alt="" className=" w-10 h-10 rounded-3xl" />}>
               <ModalPerfil />
             </NavItem>
