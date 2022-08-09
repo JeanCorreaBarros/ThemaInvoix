@@ -1,6 +1,5 @@
 import React from 'react'
 import './modals.css';
-import { OptionBtnNoti } from './optionsbtn/OptionBtnNoti';
 
 
 const ModalNotificacion = () => {

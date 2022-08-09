@@ -52,7 +52,7 @@ const Navbar = (props) => {
     setSidebar(!sidebar);
   } 
 
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(sessionStorage.getItem('User'));
 
 
   return (
@@ -84,7 +84,7 @@ const Navbar = (props) => {
           </div>
 
           <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-lime-700">
-            <NavItem img={<img src={user.photoURL ? user.photoURL : perfil} alt="" className=" w-10 h-10 rounded-3xl" />}>
+            <NavItem img={<img src={user.photo_perfil ? user.photo_perfil : perfil} alt="" className=" w-10 h-10 rounded-3xl" />}>
               <ModalPerfil />
             </NavItem>
           </div>

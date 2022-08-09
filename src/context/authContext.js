@@ -3,11 +3,9 @@ import {
    createUserWithEmailAndPassword,
    signInWithEmailAndPassword,
    onAuthStateChanged,
-   GoogleAuthProvider,
-   signInWithPopup,
    signOut,
 } from "firebase/auth";
-import {useNavigate} from 'react-router-dom'
+
 
 
 
@@ -23,49 +21,23 @@ export const useAuth = () => {
 
     /*-Provider--*/
 export function AuthProvider({children}) {
-   const navigate = useNavigate()
+ 
 
    const login =  (email, password) =>  signInWithEmailAndPassword(auth, email, password);
    const signup =  (email, password) => createUserWithEmailAndPassword(auth, email, password);
-
-   const authGmail = () => {
-      
-      const provider = new GoogleAuthProvider();
-      signInWithPopup(auth, provider)
-      .then( (result) => {
-         const user = result.user;
-         if(user){
-            navigate('/')
-            console.log(user.photoURL)
-         }
-         
-         
-      }).catch((error) => {
-         const errorCode = error.code;
-         const errorMessage = error.message;
-         console.log(errorCode,errorMessage);
-      })
-   } 
-   
-
    const legout = ()=> {
        signOut(auth)
        window.location.reload();
    };
 
   
-   const handlepop = ()=> {
-      navigate('/') 
-   }
-   
-   
    useEffect(() =>{
       onAuthStateChanged(auth, (user) => {
          window.localStorage.setItem('user', JSON.stringify(user))
-         console.log(user)
+         
       });  
    },[])
             
 
-   return<authContext.Provider value={{login,signup,legout,authGmail,handlepop}}>{children}</authContext.Provider>;
+   return<authContext.Provider value={{login,signup,legout}}>{children}</authContext.Provider>;
 }

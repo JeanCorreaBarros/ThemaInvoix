@@ -1,8 +1,5 @@
 import React,{useState} from 'react'
-import PasoUno from './PasoUno';
-import PasoDos from './PasoDos';
-import PasoTres from './PasoTres';
-import PasoFinal from './PasoFinal';
+
 
 
 const Wizard = () => {

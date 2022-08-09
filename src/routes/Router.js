@@ -6,11 +6,10 @@ import {
 } from "react-router-dom";
 import App from '../App';
 import NotFound from '../pages/NotFound'
-import {AuthProvider} from  '../context/authContext'
-import { ProtectedRoute } from '../components/proptectedRouter/ProtectedRoute'
+import {AuthProvider} from  '../context/bdContext'
 import Home from '../pages/Home';
 import Prueba from '../pages/Prueba';
-import Wizard from '../components/wizard/Wizard';
+import Confirm from '../components/wizard/Confirm';
 import ProtectLayout from '../components/otros/ProtectLayout';
 
 
@@ -24,7 +23,7 @@ const Router = () => {
                 <Routes>
                     <Route path="/" element={<ProtectLayout><Home/></ProtectLayout>}/>
                     <Route path="/prueba" element={<ProtectLayout><Prueba/></ProtectLayout>}/>
-                    <Route path="/wizardReneweb" element={<ProtectedRoute><Wizard/></ProtectedRoute>}/>
+                    <Route path="/confirm" element={<Confirm/>}/>
                     <Route path="/auth" element={<App/>}/>
                     <Route path="*" element={<NotFound />} />
                 </Routes>

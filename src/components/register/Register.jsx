@@ -1,8 +1,10 @@
 import React,{useState} from 'react'
-import { Link,useNavigate} from 'react-router-dom'
-import IMGX from '../../assets/img/login_genomax.png'
-import {useAuth} from '../../context/authContext'
+import { Link} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import IMGX from '../../assets/img/login_genomax.png';
+import {useDataBase}from '../../context/bdContext';
 import { FaChevronLeft } from "react-icons/fa";
+import Swal from 'sweetalert2';
 
 
 
@@ -14,10 +16,13 @@ const Register = (props) => {
     password: '',
   });
 
-  const {signup} = useAuth()
-  const navigate = useNavigate()
-  const regexp = RegExp(/^([A-Za-z0-9]+){8,15}$/);
-  const Password = regexp.test(user.password);
+  const {signup} = useDataBase();
+  const navigate = useNavigate();
+
+  const regexP = RegExp(/^([A-Za-z0-9]+){8,15}$/);
+  const regexM = RegExp(/[a-z0-9]+@[a-z]+.[a-z]{2,3}/);
+  const Password = regexP.test(user.password);
+  const Email = regexM.test(user.email);
 
   const [erro,seterro]= useState(false)
 
@@ -32,16 +37,23 @@ const Register = (props) => {
    
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(Password){
+    if(Password && Email){
       try {
+        //function de Crear Users
         await signup(user.email, user.password);
-        navigate('/wizardReneweb')
+        navigate('/confirm')
+        //limpiar campos despues del envio
+         e.target.reset();
       }catch (error) {
          console.log('Este correo ya esta en Uso');
          publiError(error)
       }
     }else{
-      window.alert("Clave Minima de 8 a 15 Caracteres")
+      Swal.fire({
+        icon: 'error',
+        title: "Error Password",
+        text: 'Clave Minima de 8 Caracteres🤔',
+      })
     }
   }
 
@@ -62,7 +74,7 @@ const Register = (props) => {
               type="email"  
               name="email"
               onChange={handleChange}  
-              placeholder="Ingrese su Email" 
+              placeholder="Correo" 
               className='w-80 h-10 pl-4 shadow-lg focus:outline-none focus:ring focus:ring-blue-500 rounded' 
             />
             <span className='text-red-600 text-sm ml-5 w-5/6  '>{erro ? 'El correo ya esta Registrado en Genomax' :''}</span>
@@ -74,14 +86,14 @@ const Register = (props) => {
               name="password"
               onChange={handleChange} 
               id="password" 
-              placeholder="Ingrese su Contraseña" 
+              placeholder="Contraseña (min. 8 caracteres)" 
               className='w-80 h-10 pl-4 shadow-lg focus:outline-none focus:ring focus:ring-blue-500 rounded' 
             />
           </div>
           <div className='w-80 mb-4'>
               <p className='text-sm text-center'>Al hacer clic en Registrarse, indicas que has leído y aceptas los <Link to="http://" className='text-blue-700'>Términos y condiciones</Link></p>
           </div>
-          <button className="w-80 h-10 bg-green-400 text-white hover:bg-green-500  rounded mb-4">Registrarme</button>
+          <button className="w-80 h-10 bg-green-600 text-white hover:bg-green-500  rounded mb-4">Registrarme</button>
         </form>
         <div className="grid grid-cols-1 ">
           <button onClick={props.estado} className="text-center flex items-center "><FaChevronLeft className="pr-2"/>Iniciar Sesion</button>
