@@ -25,13 +25,13 @@ const ModalPerfil = () => {
         <hr/>
         <div className=" h-2/6 flex flex-col justify-center  ">
           <div className="w-full h-10 flex hover:bg-gray-200 cursor-pointer">
-            <Link  to="#" className="pl-2 pt-2 ">Mi Cuenta</Link>
+            <Link  to="/micuenta" className="pl-2 pt-2 ">Mi Cuenta</Link>
           </div>
           <div className="w-full h-10 flex hover:bg-gray-200 cursor-pointer ">
-            <Link  to="#" className="pl-2 pt-2">Configuracion</Link >
+            <Link  to="/configuracionPerfil" className="pl-2 pt-2">Configuracion</Link >
           </div>
-          <div className="w-full h-10 flex hover:bg-gray-200 cursor-pointer ">
-            <Link  to="#" className="pl-2 pt-2">Restableces Contraseña</Link> 
+          <div className="w-full h-10 flex hover:bg-lima-600 cursor-pointer ">
+            <Link  to="/newpassword" className="pl-2 pt-2">Restableces Contraseña</Link> 
           </div>
         </div>
         <hr/>

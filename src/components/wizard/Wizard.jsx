@@ -1,8 +1,9 @@
 import React,{useState} from 'react'
+import PasoOne from "./PasoOne"
+import PasoTwo from "./PasoTwo";
 
 
-
-const Wizard = () => {
+const Wizard = (props) => {
     
   const [state,setState] = useState({
     paso: 1,
@@ -17,7 +18,7 @@ const Wizard = () => {
       setState({paso: paso +1})
       
     }
-    const pasoAtras = () =>{
+    const omitir = () =>{
       const {paso}= state;
       setState( {paso: paso -1}) 
     }
@@ -29,43 +30,26 @@ const Wizard = () => {
     function Wizard () {
         switch(state.paso){
           case 1:
-            return <PasoUno 
+            return <PasoOne
             handleInputChange={handleInputChange}
             siguientePaso={siguientePaso}   
             />
           case 2:
-            return <PasoDos
+            return <PasoTwo
+            estado={props.estado}
             handleInputChange={handleInputChange}
             siguientePaso={siguientePaso} 
-            pasoAtras={pasoAtras}
+            omitir={omitir}
              />
-          case 3:
-            return <PasoTres
-            state={state}
-            handleInputChange={handleInputChange}
-            siguientePaso={siguientePaso} 
-            pasoAtras={pasoAtras}
-            />   
-          case 4:
-            return <PasoFinal
-            handleInputChange={handleInputChange}
-            siguientePaso={siguientePaso} 
-            pasoAtras={pasoAtras}
-            />  
           default:
             <div>ERROR</div> 
         } 
     } 
    
   return (
-    <div className=" w-12/12 h-screen flex justify-center items-center bg-gray-100 ">
-      <div className=" bg-gray-300 w-4/12 h-5/6 rounded-md shadow-md border border-gray-300 ">
-        {Wizard()}
-      </div>
-
-    </div>
-    
-    
+    <>
+      {Wizard()}
+    </>
   )
 }
 

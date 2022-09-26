@@ -15,7 +15,7 @@ export const useDataBase = () => {
 /*-Provider--*/
 export function AuthProvider({children}) {
  
-  const login = (email, password) => signInWithEmailAndPassword(email, password);
+  const login = (user, pass) => signInWithEmailAndPassword(user, pass);
   const signup =  (email, password) => createUserWithEmailAndPassword(email, password);
   const confirm = (Codigo) => confirmCodigoUser(Codigo);
    

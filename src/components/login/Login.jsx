@@ -41,7 +41,7 @@ const Login = (props) => {
             <div className='flex flex-col mb-4 '>
               <label htmlFor="email" className='font-semibold pb-2'>Usuario</label>
               <input 
-                type="email" 
+                type="text" 
                 name="email" 
                 id="email"
                 placeholder="Correo" 

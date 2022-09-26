@@ -1,15 +1,18 @@
 import React,{useState} from 'react';
 import Navbar from '../navbar/Navbar';
-import WindowEmergente from '../wizard/WindowEmergente';
+import Wizard from '../wizard/Wizard';
 
 const LayoutDashboard = ({children}) => {
+
   const [isWizard,setIsWizard] = useState(true)
  
   return (
     <>
-     {isWizard ? <WindowEmergente estado={setIsWizard}/>:null}  
-      <Navbar/> 
-      {children}
+     {isWizard ? <Wizard estado={setIsWizard}/>:null}  
+      <Navbar>
+         {children}
+      </Navbar>
+      
     </>
   )
 }

@@ -1,23 +1,21 @@
-import React,{ useState} from 'react';
-import styled from 'styled-components';
-import * as FaIcons from 'react-icons/fa';
+import React, { useState } from "react";
+import styled from "styled-components";
 import { BiPlusCircle } from "react-icons/bi";
 import { VscBellDot } from "react-icons/vsc";
-import ModalButtonMas from '../modals/ModalButtonMas';
-import ModalNotificacion from '../modals/ModalNotificacion';
-import ModalPerfil from '../modals/ModalPerfil';
-import './Navbar.css';
-import {Sidebar} from '../sidebar/Sidebar';
-import {useClickOutside} from '../../services/Mause'
-import perfil from '../../assets/img/perfil.png';
-
-
+import ModalButtonMas from "../modals/ModalButtonMas";
+import ModalNotificacion from "../modals/ModalNotificacion";
+import ModalPerfil from "../modals/ModalPerfil";
+import "./Navbar.css";
+import SideBar from "../sidebar/Sidebar";
+import { useClickOutside } from "../../services/Mause";
+import perfil from "../../assets/img/perfil.png";
+import { motion } from "framer-motion";
 
 const Nav = styled.span`
   background: #66a31c;
   height: 55px;
-  width:100%;
-  position:fixed;
+  width: 100%;
+  position: fixed;
   display: flex;
   vertical-align: top;
   align-items: center;
@@ -27,9 +25,8 @@ const Nav = styled.span`
 `;
 
 const Navbar = (props) => {
-
+  const [verdad, setVerdad] = useState(false);
   function NavItem(props) {
-
     const [isOpen, setIsOpen] = useState(false);
 
     let domNode = useClickOutside(() => {
@@ -37,8 +34,8 @@ const Navbar = (props) => {
     });
 
     return (
-      <div ref={domNode}  className="nav-item">
-        <button onClick={() => setIsOpen((isOpen) => !isOpen)}  type="button" >
+      <div ref={domNode} className="nav-item">
+        <button onClick={() => setIsOpen((isOpen) => !isOpen)} type="button">
           {props.img}
           {props.icon}
         </button>
@@ -47,57 +44,57 @@ const Navbar = (props) => {
     );
   }
 
-  const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () =>{
-    setSidebar(!sidebar);
-  } 
-
-  const user = JSON.parse(sessionStorage.getItem('User'));
-
-
+  //const user = JSON.parse(sessionStorage.getItem("User"));
   return (
     <>
       <Nav className="flex justify-between">
-
-        <div className="flex justify-around items-center gap-x-6 pl-5 ">
-          <button onClick={showSidebar} className="text-white  w-12 h-12 flex justify-center items-center rounded-3xl hover:bg-lime-700 ">
-            <FaIcons.FaBars  />
-          </button>
-
-          <div className="w-40 h-12 flex justify-center items-center text-white">
-            <a href={'/'} className=''>GenomaX MD</a>
-          </div>
-
-          <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-lime-700 ">
+        <div className="flex justify-around items-center gap-x-6 pl-32 ">
+        <motion.div  animate={{
+          visibility: verdad ? "hidden" : "", 
+        }}>
+          <div className={`w-12 h-12 flex justify-center items-center rounded-3xl hover:bg-lime-700 `}>
             <NavItem icon={<BiPlusCircle className="opciones" />}>
-              <ModalButtonMas/> 
+              <ModalButtonMas />
             </NavItem>
           </div>
+          </motion.div>
+          <motion.div  animate={{
+          visibility: verdad ? "" : "hidden", 
+        }}>
+          <div className={`w-12 h-12 ml-28 flex justify-center items-center rounded-3xl hover:bg-lime-700`}>
+            <NavItem icon={<BiPlusCircle className="opciones" />}>
+              <ModalButtonMas />
+            </NavItem>
+          </div>
+          </motion.div>
         </div>
-
         <div className="flex justify-center items-between gap-x-12 pr-5">
-
           <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-lime-700">
-            <NavItem icon={<VscBellDot className="text-xl text-white "/> }>
-              <ModalNotificacion /> 
+            <NavItem icon={<VscBellDot className="text-xl text-white " />}>
+              <ModalNotificacion />
             </NavItem>
           </div>
 
           <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-lime-700">
-            <NavItem img={<img src={user.photo_perfil ? user.photo_perfil : perfil} alt="" className=" w-10 h-10 rounded-3xl" />}>
+            <NavItem
+              img={
+                <img src={perfil} alt="" className=" w-10 h-10 rounded-3xl" />
+              }
+            >
               <ModalPerfil />
             </NavItem>
           </div>
-         
         </div>
       </Nav>
-      <Sidebar 
-        sidebar={sidebar}
-        setSidebar={setSidebar}
-        showSidebar={showSidebar}
-      />
+      <div className="flex w-full">
+        <SideBar 
+        estado={verdad}
+        cambio={setVerdad}
+        />
+        {props.children}
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
