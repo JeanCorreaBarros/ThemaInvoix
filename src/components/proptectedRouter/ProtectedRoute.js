@@ -4,8 +4,7 @@ import {Navigate} from 'react-router-dom';
 
 
 export function ProtectedRoute({children}) {
-    const user = JSON.parse(sessionStorage.getItem('User'));
-    console.log(user);
+    const user = sessionStorage.getItem('User');
     if(!user) return <Navigate to='/auth' />
     return(
       <>

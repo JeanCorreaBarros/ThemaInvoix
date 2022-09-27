@@ -3,16 +3,11 @@ import {useNavigate} from 'react-router-dom'
 import IMGX from '../../assets/img/login_genomax.png'
 import { FaChevronRight} from "react-icons/fa";
 import {useDataBase} from '../../context/bdContext'
-
-
-
-
-
-
+import md5 from 'md5';
 
 
 const Login = (props) => {
-   
+ 
   const {login} = useDataBase()
   const navigate = useNavigate()
   
@@ -20,8 +15,9 @@ const Login = (props) => {
   const handleSubmit =  async (e) => {
     e.preventDefault();
     /*Crear Validaciones*/
+    let pass = e.target.password.value
     const email = e.target.email.value
-    const password = e.target.password.value
+    const password = md5(pass)
 
     try {
       await login(email, password);

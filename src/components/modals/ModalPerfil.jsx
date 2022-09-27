@@ -9,6 +9,7 @@ const ModalPerfil = () => {
 
   const handleCloseButton = () => {
     sessionStorage.removeItem('User');
+    sessionStorage.removeItem('Token');
     window.location.reload();
   }
   
@@ -19,8 +20,7 @@ const ModalPerfil = () => {
           <div>
             <img src={user.photo_perfil ? user.photo_perfil  : perfil } alt="" className="w-10 h-10 rounded-3xl" />
           </div>
-          <div className="text-sm pt-1">{user.name ? user.name : user.email}</div>
-          <div className="text-xs pt-1">Administrador</div>
+          <div className="text-sm pt-1">{user.fullname? user.fullname : user.email}</div>
         </div>
         <hr/>
         <div className=" h-2/6 flex flex-col justify-center  ">
