@@ -1,4 +1,5 @@
 import React from 'react'
+import './Style.css'
 
 function PasoTwo(props) {
     const handleCloseButton = ()=>{
@@ -7,7 +8,7 @@ function PasoTwo(props) {
 
   return (
     <div className="w-full h-full flex justify-center items-center absolute top-0 left-0 bottom-0 z-[9999] bg-transparent backdrop-blur-sm  ">
-        <div className="w-[450px] h-[500px] flex flex-col justify-evenly bg-white border rounded-lg  border-solid border-lime-600">
+        <div id='wizard-style' className="w-[450px] h-[500px] flex flex-col justify-evenly bg-white border rounded-lg">
             <div className=" w-full flex flex-col  items-center text-center">
                 <h1 className="font-bold text-2xl">¡Hola 😊, te damos la bienvenida!</h1>
                 <p className="px-8">Llena estos campos y ayúdanos a mejorar tu experiencia en GenomaX MD.</p>
@@ -24,8 +25,8 @@ function PasoTwo(props) {
               </div>
             </form>
             <div className="flex justify-around">
-              <button className="w-4/12 h-10 bg-lime-600 shadow-xl text-white border hover:bg-lime-500 border-solid border-lime-700 rounded-md" onClick={handleCloseButton}>Omitir</button>
-              <button className="w-4/12 h-10 bg-lime-600 shadow-xl text-white border hover:bg-lime-500 border-solid border-lime-700 rounded-md" onClick={handleCloseButton}>Siguiente</button>
+              <button id='bottoms-style' className="w-4/12 h-10 bg-lime-600 shadow-xl text-white border hover:bg-lime-500 border-solid border-lime-700 rounded-md" onClick={handleCloseButton}>Omitir</button>
+              <button id='bottoms-style' className="w-4/12 h-10 bg-lime-600 shadow-xl text-white border hover:bg-lime-500 border-solid border-lime-700 rounded-md" onClick={handleCloseButton}>Siguiente</button>
             </div>
         </div> 
     </div>

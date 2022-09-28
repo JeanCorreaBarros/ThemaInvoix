@@ -12,7 +12,7 @@ import perfil from "../../assets/img/perfil.png";
 import { motion } from "framer-motion";
 
 const Nav = styled.span`
-  background: #66a31c;
+  background: #0a58ca;
   height: 55px;
   width: 100%;
   position: fixed;
@@ -20,7 +20,6 @@ const Nav = styled.span`
   vertical-align: top;
   align-items: center;
   padding: 10px;
-  box-shadow: -1px 7px 24px -8px #497513;
   z-index: 999;
 `;
 
@@ -52,7 +51,7 @@ const Navbar = (props) => {
         <motion.div  animate={{
           visibility: verdad ? "hidden" : "", 
         }}>
-          <div className={`w-12 h-12 flex justify-center items-center rounded-3xl hover:bg-lime-700 `}>
+          <div className={`w-12 h-12 flex justify-center items-center rounded-3xl hover:bg-blue-800 `}>
             <NavItem icon={<BiPlusCircle className="opciones" />}>
               <ModalButtonMas />
             </NavItem>
@@ -61,7 +60,7 @@ const Navbar = (props) => {
           <motion.div  animate={{
           visibility: verdad ? "" : "hidden", 
         }}>
-          <div className={`w-12 h-12 ml-28 flex justify-center items-center rounded-3xl hover:bg-lime-700`}>
+          <div className={`w-12 h-12 ml-28 flex justify-center items-center rounded-3xl hover:bg-blue-800`}>
             <NavItem icon={<BiPlusCircle className="opciones" />}>
               <ModalButtonMas />
             </NavItem>
@@ -69,13 +68,13 @@ const Navbar = (props) => {
           </motion.div>
         </div>
         <div className="flex justify-center items-between gap-x-12 pr-5">
-          <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-lime-700">
+          <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-blue-800">
             <NavItem icon={<VscBellDot className="text-xl text-white " />}>
               <ModalNotificacion />
             </NavItem>
           </div>
 
-          <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-lime-700">
+          <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-blue-800">
             <NavItem
               img={
                 <img src={perfil} alt="" className=" w-10 h-10 rounded-3xl" />

@@ -37,7 +37,7 @@ const LayoutAuth = (props) => {
                 handleActive={handleActive}
               />
             }  
-            <div className='w-2/5 h-full '>
+            <div className='w-0 md:w-2/5 md:h-full '>
                 <video
                   className='rounded-r-3xl object-cover min-w-full min-h-full' 
                   controls={false}

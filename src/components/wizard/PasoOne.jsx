@@ -1,4 +1,5 @@
 import React from 'react'
+import './Style.css'
 
 function WindowEmergente(props) {
     const handleNext = ()=>{
@@ -7,13 +8,13 @@ function WindowEmergente(props) {
 
   return (
     <div className="w-full h-full flex justify-center items-center absolute top-0 left-0 bottom-0 z-[9999] bg-transparent backdrop-blur-sm  ">
-        <div className="w-[450px] h-[500px] flex flex-col justify-evenly bg-white border rounded-lg  border-solid border-lime-600">
+        <div id='wizard-style' className="w-[450px] h-[500px] flex flex-col justify-evenly bg-white border rounded-lg">
             <div className=" w-full flex flex-col  items-center text-center">
                 <h1 className="font-bold text-2xl">¡Hola 😊, te damos la bienvenida!</h1>
                 <p className="px-8">Llena estos campos y ayúdanos a mejorar tu experiencia en GenomaX MD.</p>
             </div>
             <form action="" className="flex flex-col justify-center items-center">
-              <div className="flex flex-col w-9/12 h-16 ">
+              <div className="flex flex-col w-9/12 h-16">
                 <input type="text" className="mt-1 h-full px-3 py-2 border border-solid border-slate-600 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"  placeholder="Nombres" />
               </div>
               <div className="flex flex-col w-9/12 h-16 ">
@@ -34,7 +35,7 @@ function WindowEmergente(props) {
               </div>
             </form>
             <div className="flex justify-around">
-              <button className="w-9/12 h-10 bg-lime-600 shadow-xl text-white border hover:bg-lime-500 border-solid border-lime-700 rounded-md" onClick={handleNext}>Siguiente</button>
+              <button id='bottoms-style' className="w-9/12 h-10 bg-blue-700 shadow-xl text-white border hover:bg-lime-500 border-solid border-blue-700 rounded-md" onClick={handleNext}>Siguiente</button>
             </div>
         </div> 
     </div>

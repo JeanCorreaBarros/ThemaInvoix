@@ -36,7 +36,7 @@ const ModalPerfil = () => {
         </div>
         <hr/>
         <div className="flex justify-center item-center">
-          <button onClick={handleCloseButton}   className=" rounded-md w-3/5 h-8 mt-7 text-white bg-lime-600  hover:bg-lime-700 " >Cerrar Sesion</button>
+          <button onClick={handleCloseButton}   className=" rounded-md w-3/5 h-8 mt-7 text-white bg-blue-700  hover:bg-blue-800 " >Cerrar Sesion</button>
         </div>
     </div>
   )

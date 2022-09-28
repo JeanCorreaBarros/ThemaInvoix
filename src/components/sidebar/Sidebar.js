@@ -3,8 +3,9 @@ import { RiArrowLeftSLine } from "react-icons/ri";
 import { BiLineChartDown } from "react-icons/bi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
-import favicon from "../../assets/img/favicon.ico";
+import favicon from "../../assets/img/logo-nexus-it.png";
 import img from "../../assets/img/empresa.jpg";
+import invoix from "../../assets/img/logoinvoix_32.2 (1).png";
 import SidebarMenu from "./SidebarMenu";
 import { routes } from "./Data";
 
@@ -34,8 +35,8 @@ const SideBar = (props) => {
     <>
       <motion.div
         animate={{
-          width: props.estado ? "300px" : "66px",
-          minWidth: props.estado ? "238px" : "66px",
+          width: props.estado ? "290px" : "66px",
+          minWidth: props.estado ? "228px" : "66px",
 
           transition: {
             duration: 0.5,
@@ -50,20 +51,17 @@ const SideBar = (props) => {
             <motion.div
               animate={{
                 marginLeft: props.estado ? "" : "-0.5px",
+                visibility: props.estado ? "hidden" : "",
               }}
             >
               <img src={favicon} alt="" className="img_section w-11 h-11" />
             </motion.div>
             {props.estado && (
-              <motion.h1
-                variants={showAnimation}
-                initial="hidden"
-                animate="show"
-                exit="hidden"
+              <motion.div
                 className="logo"
               >
-                GenomaX
-              </motion.h1>
+                 <img src={invoix} alt="img_invoix"  className='w-28 h-7'/>
+              </motion.div>
             )}
           </AnimatePresence>
 
