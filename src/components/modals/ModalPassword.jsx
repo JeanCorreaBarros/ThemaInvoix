@@ -5,7 +5,7 @@ const ModalPassword = (props) => {
     
     return (
         <div className={`bg-gradient-to-r from-slate-500 w-full ${props.active ? '' :'hidden'} h-full grid place-items-center absolute z-10`}>
-            <div className=" w-2/5 h-3/5 flex  flex-col justify-center  bg-white border-black rounded-xl text-center relative bottom-20">
+            <div className=" sm:w-[450px] w-[90%] h-[300px] sm:h-3/5 flex flex-col justify-center bg-white border-black rounded-xl text-center relative bottom-20">
                <div className=" mb-5 w-full flex justify-center items-center ">
                    <h3 className="text-xl">¿No puedes iniciar sesión?</h3>
                </div>

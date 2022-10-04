@@ -1,22 +1,138 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  .opciones {
-     color: #fff;
-     font-size: 20px;
-  }
-  
-  .bell { 
-    font-size: 20px;
-    color: #fff;   
+  margin: 0;
+  padding: 0;
+}
+
+.opciones {
+  color: #fff;
+  font-size: 20px;
+}
+
+.bell {
+  font-size: 20px;
+  color: #fff;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nabvar {
+  background: #0a58ca;
+  height: 55px;
+  width: 100%;
+  min-width: 100%;
+  position: fixed;
+  display: flex;
+  vertical-align: top;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: -1px 7px 24px -8px #497513;
+  z-index: 999;
+}
+
+#content_mas span {
+  display: none;
+}
+
+#perfil_mobile span {
+  display: none;
+}
+
+.content_menu {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .nabvar {
+    bottom: 0%;
   }
 
-  .nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  #content_mas {
+    display: block;
+    margin-top: 18px;
   }
-  
+
+  #content_mas:hover {
+    background-color: #66a31c;
+  }
+
+  #content_mas span {
+    display: inline-block;
+    pointer-events: none;
+    font-size: 12px;
+    position: relative;
+    top: -6px;
+    left: 10px;
+    color: #fff;
+  }
+
+  .opciones {
+    font-size: 21.5px;
+  }
+
+  #mobile_mas {
+    column-gap: 0px;
+    margin-left: 0px;
+  }
+
+  #moble_buttom-mas {
+    visibility: hidden;
+  }
+
+  .content_menu {
+    margin-top: 15px;
+    display: inline-block;
+  }
+
+  .content_menu span {
+    position: relative;
+    pointer-events: none;
+    font-size: 12px;
+    color: #fff;
+    top: -4px;
+    right: 74px;
+  }
+
+  #menu_mobile {
+    width: 48px;
+    font-size: 18px;
+    visibility: visible;
+    color: #fff;
+    position: relative;
+    right: 82px;
+    cursor: pointer;
+  }
+
+  #mobile_notificacion {
+    display: none;
+  }
+
+  #modal_perfil {
+    padding-right: 5px;
+  }
+
+  #perfil_mobile {
+    display: block;
+  }
+
+  #perfil_mobile:hover {
+    background-color: #66a31c;
+  }
+
+  #perfil_mobile img {
+    width: 33px;
+    height: 33px;
+  }
+
+  #perfil_mobile span {
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    left: 11.5px;
+    font-size: 12px;
+    color: #fff;
+  }
+}
