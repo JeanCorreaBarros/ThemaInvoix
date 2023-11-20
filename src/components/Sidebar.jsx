@@ -59,6 +59,190 @@ const Sidebar = () => {
     fetchMenu();
   }, []);
 
+  // Menu Provisional
+  const organizedArray = [
+    {
+      "id": 1,
+      "title": "Facturación",
+      "icon": "order_approve",
+      "type": "details",
+      "items": [
+        {
+          "id_menu": 1,
+          "title": "Facturas de Venta",
+          "icon": "apps",
+          "link": "/invoice",
+          "type": "link"
+        },
+        {
+          "id_menu": 1,
+          "title": "Cotizaciones",
+          "icon": "apps",
+          "link": "/estimate",
+          "type": "link"
+        },
+        {
+          "id_menu": 1,
+          "title": "Remisiones",
+          "icon": "apps",
+          "link": "/remission",
+          "type": "link"
+        },
+        {
+          "id_menu": 1,
+          "title": "Notas Débitos",
+          "icon": "apps",
+          "link": "/debitnotes",
+          "type": "link"
+        },
+        {
+          "id_menu": 1,
+          "title": "Notas Crédito",
+          "icon": "apps",
+          "link": "/creditnotes",
+          "type": "link"
+        },
+        {
+          "id_menu": 1,
+          "title": "Pagos Recibidos",
+          "icon": "apps",
+          "link": "/paymentrecived",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Pagos",
+      "icon": "payments",
+      "type": "details",
+      "items": [
+        {
+          "id_menu": 2,
+          "title": "Facturas de Compra",
+          "icon": "apps",
+          "link": "/bill",
+          "type": "link"
+        },
+        {
+          "id_menu": 2,
+          "title": "Documentos Soporte",
+          "icon": "apps",
+          "link": "/support-document",
+          "type": "link"
+        },
+        {
+          "id_menu": 2,
+          "title": "Ordenes de Compra",
+          "icon": "apps",
+          "link": "/purchase-order",
+          "type": "link"
+        },
+        {
+          "id_menu": 2,
+          "title": "Ajuste en Documentos",
+          "icon": "apps",
+          "link": "/adjustment-document",
+          "type": "link"
+        },
+        {
+          "id_menu": 2,
+          "title": "Egresos",
+          "icon": "apps",
+          "link": "/payment",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Nomina",
+      "icon": "group",
+      "type": "details",
+      "items": []
+    },
+    {
+      "id": 4,
+      "title": "Inventario",
+      "icon": "barcode_reader",
+      "type": "details",
+      "items": []
+    },
+    {
+      "id": 5,
+      "title": "Contabilidad",
+      "icon": "account_balance",
+      "type": "details",
+      "items": [
+        {
+          "id_menu": 5,
+          "title": "Asientos Contables",
+          "icon": "apps",
+          "link": "/accounting-journal",
+          "type": "link"
+        },
+        {
+          "id_menu": 5,
+          "title": "Movimientos Bancarios",
+          "icon": "apps",
+          "link": "/banking-transactions",
+          "type": "link"
+        },
+        {
+          "id_menu": 5,
+          "title": "Procesos Contables",
+          "icon": "apps",
+          "link": "/accounting-processes",
+          "type": "link"
+        },
+        {
+          "id_menu": 5,
+          "title": "Reportes Contables",
+          "icon": "apps",
+          "link": "/accounting-reports",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Reportes",
+      "icon": "bar_chart_4_bars",
+      "type": "details",
+      "items": []
+    },
+    {
+      "id": 7,
+      "title": "Configuración",
+      "icon": "settings_suggest",
+      "type": "details",
+      "items": [
+        {
+          "id_menu": 7,
+          "title": "Datos Empresa",
+          "icon": "apps",
+          "link": "/companyconfig",
+          "type": "link"
+        },
+        {
+          "id_menu": 7,
+          "title": "Registro Certificado",
+          "icon": "apps",
+          "link": "/registercertficate",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Utilidades",
+      "icon": "build",
+      "type": "details",
+      "items": []
+    }
+  ];
+
+
   const handleCloseSession = () => {
     Swal.fire(
       'Cerrando Session!',
@@ -80,19 +264,19 @@ const Sidebar = () => {
   return (
     <aside
       id="sidebar"
-      className={`hidden fixed z-20 h-full top-0 left-0 pt-10  lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75 overflow-y-hidden`}
+      className={`hidden fixed z-20 h-full top-0 left-0 pt-20  lg:flex flex-shrink-0 flex-col w-64 `}
       aria-label="Sidebar"
     >
-      <div className="relative flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white pt-0">
+      <div className="relative flex-1 flex flex-col min-h-0 border-r  bg-gray-200 bg-opacity-25 shadow-lg backdrop-blur-md border-opacity-18 rounded-lg  pt-0 ">
         <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-          <div className="flex flex-col justify-between h-screen bg-white border-r">
+          <div className="flex flex-col justify-between h-screen border-r">
 
             <div className="px-4 py-2">
               <nav aria-label="Main Nav" className="flex flex-col mt-2 space-y-1">
                 <a
 
                   href="/"
-                  className="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-green-600 hover:text-gray-50"
+                  className="flex items-center px-4 py-4 text-white rounded-lg bg-blue-600 hover:text-gray-50"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +301,7 @@ const Sidebar = () => {
                     DashBoard
                   </span>
                 </a>
-                {menuList.map((item, index) => {
+                {organizedArray.map((item, index) => {
                   switch (item.type) {
                     case "link":
                       return (
@@ -156,7 +340,7 @@ const Sidebar = () => {
                           key={index}
                           className="group summary::-webkit-details-marker:hidden"
                         >
-                          <summary className="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-green-600 hover:text-gray-50">
+                          <summary className="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-blue-600 hover:text-gray-50">
                             <span className="material-symbols-outlined">{item.icon}</span>
                             <span className="ml-3 text-sm font-medium">
                               {item.title}
@@ -182,7 +366,7 @@ const Sidebar = () => {
                                 <li key={subindex} className="">
                                   <a
                                     href={subitem.link}
-                                    className="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-green-600 hover:text-gray-50"
+                                    className="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-blue-600 hover:text-gray-50"
                                   >
                                     <svg
                                       xmlns="http://www.w3.org/2000/svg"

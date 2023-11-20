@@ -14,18 +14,18 @@ const Dashboard = () => {
       setIsLoading(false);
     }, 2000);
   }, []);
-  
+
 
   const [ventas, setVentas] = useState([]);
   useEffect(() => {
     const fetchVentas = async () => {
       const token = sessionStorage.getItem('token');
       try {
-        const response = await fetch('https://api.invoix.co/v1/monthly-sales',{
+        const response = await fetch('https://api.invoix.co/v1/monthly-sales', {
           headers: {
-              'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`
           },
-      });
+        });
         if (response.ok) {
           const data = await response.json();
           setVentas(data);
@@ -42,18 +42,49 @@ const Dashboard = () => {
   }, []);
 
 
+  const arrayDatos = {
+    "dash_monthly_sales": [
+      {
+        "mes": "mayo",
+        "anio": 2023,
+        "total": 10236060
+      }
+    ]
+  };
+  
+  
+  
+
+
   if (isLoading) {
     return (
-      <div class="loader">
-        <div class="square" id="sq1"></div>
-        <div class="square" id="sq2"></div>
-        <div class="square" id="sq3"></div>
-        <div class="square" id="sq4"></div>
-        <div class="square" id="sq5"></div>
-        <div class="square" id="sq6"></div>
-        <div class="square" id="sq7"></div>
-        <div class="square" id="sq8"></div>
-        <div class="square" id="sq9"></div>
+      <div className="loader">
+        <div class="boxes">
+          <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       </div>
     )
   }
@@ -69,7 +100,7 @@ const Dashboard = () => {
 
         <div class="w-full grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-2 gap-4">
           <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
-            <ChartsOne ventas={ventas} />
+            <ChartsOne ventas={arrayDatos} />
           </div>
 
           <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8  ">

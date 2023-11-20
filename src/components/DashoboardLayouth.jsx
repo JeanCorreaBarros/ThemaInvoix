@@ -8,11 +8,11 @@ import Sidebar from "./Sidebar";
 const DashoboardLayouth = ({children}) => {
   const [isVisible, setIsVisible] = useState(true);
   return (
-    <div>
+    <div className="">
       <NavBar isVisible={isVisible} setIsVisible={setIsVisible}/>
       <div className="flex overflow-hidden bg-white pt-16">
         {isVisible?<Sidebar/>:""}
-        <div id="main-content" className={`h-full w-full bg-gray-100 relative overflow-y-auto ${isVisible?"lg:ml-64":""}`}>
+        <div id="main-content" className={`h-full w-full bg-white relative overflow-y-auto ${isVisible?"lg:ml-64":""}`}>
           {children}
           <Footer />
           <AllRights/>
