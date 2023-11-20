@@ -13,26 +13,6 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false); // Estado para mostrar/ocultar la contraseña
 
 
-  const handleGoogleLogin = () => {
-    const googleLoginUrl = 'https://accounts.google.com/o/oauth2/v2/auth';
-    const clientId = '1014952640043-r1e9kckavm5lg9ocmjrisnsjb1o29pnk.apps.googleusercontent.com';
-    const redirectUri = 'http://localhost:5173/'; // URL de redirección después de la autenticación
-
-    const queryParams = new URLSearchParams({
-      client_id: clientId,
-      redirect_uri: redirectUri,
-      response_type: 'token',
-      scope: 'email profile',
-    });
-
-    const authUrl = `${googleLoginUrl}?${queryParams.toString()}`;
-    window.location.href = authUrl;
-  };
-
-
-
-
-
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
